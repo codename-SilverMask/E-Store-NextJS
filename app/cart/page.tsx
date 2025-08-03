@@ -88,7 +88,10 @@ export default function CartPage() {
                 >
                   Cart (0)
                 </Link>
-                <Link href="/orders" className="text-gray-700 hover:text-blue-600">
+                <Link
+                  href="/orders"
+                  className="text-gray-700 hover:text-blue-600"
+                >
                   Orders
                 </Link>
               </div>
@@ -125,30 +128,68 @@ export default function CartPage() {
               <div>
                 <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-300 hover:text-white">About Us</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white">Contact</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white">FAQ</a></li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      FAQ
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-300 hover:text-white">Shipping Info</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white">Returns</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white">Support</a></li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Shipping Info
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Returns
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Support
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-300 hover:text-white">Facebook</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white">Twitter</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white">Instagram</a></li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-300 hover:text-white">
+                      Instagram
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-              <p className="text-gray-300">&copy; 2025 E-Store. All rights reserved.</p>
+              <p className="text-gray-300">
+                &copy; 2025 E-Store. All rights reserved.
+              </p>
             </div>
           </div>
         </footer>
@@ -169,7 +210,10 @@ export default function CartPage() {
               <Link href="/cart" className="text-gray-700 hover:text-blue-600">
                 Cart ({getTotalItems()})
               </Link>
-              <Link href="/orders" className="text-gray-700 hover:text-blue-600">
+              <Link
+                href="/orders"
+                className="text-gray-700 hover:text-blue-600"
+              >
                 Orders
               </Link>
             </div>
@@ -199,7 +243,9 @@ export default function CartPage() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg text-black">{item.title}</h3>
+                      <h3 className="font-semibold text-lg text-black">
+                        {item.title}
+                      </h3>
                       <p className="text-gray-600">${item.price}</p>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -211,7 +257,9 @@ export default function CartPage() {
                       >
                         -
                       </button>
-                      <span className="w-8 text-center text-black">{item.quantity}</span>
+                      <span className="w-8 text-center text-black">
+                        {item.quantity}
+                      </span>
                       <button
                         onClick={() =>
                           updateQuantity(item.id, item.quantity + 1)
@@ -241,7 +289,9 @@ export default function CartPage() {
           {/* Order Summary */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-4">
-              <h2 className="text-xl font-semibold mb-4 text-black">Order Summary</h2>
+              <h2 className="text-xl font-semibold mb-4 text-black">
+                Order Summary
+              </h2>
 
               <div className="space-y-2 mb-4">
                 <div className="flex justify-between text-black">
@@ -259,7 +309,7 @@ export default function CartPage() {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={handleCheckout}
                 className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"
               >
@@ -290,30 +340,68 @@ export default function CartPage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white">About Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Contact</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">FAQ</a></li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    FAQ
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white">Shipping Info</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Returns</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Support</a></li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Shipping Info
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Returns
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Support
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white">Facebook</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Twitter</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Instagram</a></li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Instagram
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p className="text-gray-300">&copy; 2025 E-Store. All rights reserved.</p>
+            <p className="text-gray-300">
+              &copy; 2025 E-Store. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

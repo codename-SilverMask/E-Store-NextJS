@@ -81,7 +81,10 @@ export default function ProductClient({ product }: ProductClientProps) {
               <Link href="/cart" className="text-gray-700 hover:text-blue-600">
                 Cart ({getTotalItems()})
               </Link>
-              <Link href="/orders" className="text-gray-700 hover:text-blue-600">
+              <Link
+                href="/orders"
+                className="text-gray-700 hover:text-blue-600"
+              >
                 Orders
               </Link>
             </div>
@@ -94,12 +97,16 @@ export default function ProductClient({ product }: ProductClientProps) {
         <nav className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-gray-600">
             <li>
-              <Link href="/" className="hover:text-blue-600">Home</Link>
+              <Link href="/" className="hover:text-blue-600">
+                Home
+              </Link>
             </li>
             <li>/</li>
             <li className="capitalize">{product.category}</li>
             <li>/</li>
-            <li className="text-gray-800 font-medium truncate max-w-xs">{product.title}</li>
+            <li className="text-gray-800 font-medium truncate max-w-xs">
+              {product.title}
+            </li>
           </ol>
         </nav>
 
@@ -125,7 +132,9 @@ export default function ProductClient({ product }: ProductClientProps) {
                 <span className="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mb-4 capitalize">
                   {product.category}
                 </span>
-                <h1 className="text-3xl font-bold text-black mb-2">{product.title}</h1>
+                <h1 className="text-3xl font-bold text-black mb-2">
+                  {product.title}
+                </h1>
               </div>
 
               {/* Rating */}
@@ -158,8 +167,12 @@ export default function ProductClient({ product }: ProductClientProps) {
 
               {/* Description */}
               <div>
-                <h2 className="text-xl font-semibold text-black mb-3">Description</h2>
-                <p className="text-gray-700 leading-relaxed">{product.description}</p>
+                <h2 className="text-xl font-semibold text-black mb-3">
+                  Description
+                </h2>
+                <p className="text-gray-700 leading-relaxed">
+                  {product.description}
+                </p>
               </div>
 
               {/* Action Buttons */}
@@ -200,30 +213,68 @@ export default function ProductClient({ product }: ProductClientProps) {
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white">About Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Contact</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">FAQ</a></li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    FAQ
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white">Shipping Info</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Returns</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Support</a></li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Shipping Info
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Returns
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Support
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white">Facebook</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Twitter</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white">Instagram</a></li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white">
+                    Instagram
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p className="text-gray-300">&copy; 2025 E-Store. All rights reserved.</p>
+            <p className="text-gray-300">
+              &copy; 2025 E-Store. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

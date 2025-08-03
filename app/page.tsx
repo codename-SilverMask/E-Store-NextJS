@@ -125,7 +125,10 @@ export default function HomePage() {
               <Link href="/cart" className="text-gray-700 hover:text-blue-600">
                 Cart ({getTotalItems()})
               </Link>
-              <Link href="/orders" className="text-gray-700 hover:text-blue-600">
+              <Link
+                href="/orders"
+                className="text-gray-700 hover:text-blue-600"
+              >
                 Orders
               </Link>
             </div>
