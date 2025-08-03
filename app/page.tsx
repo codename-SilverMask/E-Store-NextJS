@@ -116,18 +116,26 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-lg">
         <nav className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-blue-600">E-Store</h1>
-            <div className="flex items-center space-x-6">
-              <Link href="/" className="text-gray-700 hover:text-blue-600">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
+              E-Store
+            </h1>
+            <div className="flex items-center space-x-4 sm:space-x-6 text-sm sm:text-base">
+              <Link
+                href="/"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 Home
               </Link>
-              <Link href="/cart" className="text-gray-700 hover:text-blue-600">
+              <Link
+                href="/cart"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 Cart ({getTotalItems()})
               </Link>
               <Link
                 href="/orders"
-                className="text-gray-700 hover:text-blue-600"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
               >
                 Orders
               </Link>
@@ -138,84 +146,86 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+        <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 sm:py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
               Welcome to Our Store
             </h1>
-            <p className="text-xl md:text-2xl mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl mx-auto">
               Discover amazing products with unbeatable prices
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+            <button className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 text-sm sm:text-base">
               Shop Now
             </button>
           </div>
         </section>
 
         {/* Products Section */}
-        <section className="py-16">
+        <section className="py-12 sm:py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-800">
               Featured Products
             </h2>
             {loading ? (
               <div className="text-center">
-                <p className="text-lg text-gray-600">Loading products...</p>
+                <p className="text-base sm:text-lg text-gray-600">
+                  Loading products...
+                </p>
               </div>
             ) : error ? (
               <div className="text-center">
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded max-w-md mx-auto">
                   <p className="font-bold">Error!</p>
-                  <p>{error}</p>
+                  <p className="text-sm sm:text-base">{error}</p>
                 </div>
                 <button
                   onClick={() => window.location.reload()}
-                  className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                  className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm sm:text-base"
                 >
                   Try Again
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 {products.map((product) => (
                   <div
                     key={product.id}
                     className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl group"
                   >
-                    <div className="relative w-full h-48 overflow-hidden">
+                    <div className="relative w-full h-40 sm:h-48 overflow-hidden">
                       <Image
                         src={product.image}
                         alt={product.title}
                         fill
                         className="object-contain p-4 transition-transform duration-300 group-hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                       />
                     </div>
-                    <div className="p-4">
-                      <h3 className="font-semibold text-lg mb-2 text-black line-clamp-2">
+                    <div className="p-3 sm:p-4">
+                      <h3 className="font-semibold text-sm sm:text-lg mb-2 text-black line-clamp-2">
                         {product.title}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-3">
-                        {product.description.substring(0, 100)}...
+                      <p className="text-gray-600 text-xs sm:text-sm mb-3 line-clamp-2 sm:line-clamp-3">
+                        {product.description.substring(0, 80)}...
                       </p>
                       <div className="flex justify-between items-center mb-3">
-                        <span className="text-2xl font-bold text-blue-600">
+                        <span className="text-lg sm:text-2xl font-bold text-blue-600">
                           ${product.price}
                         </span>
-                        <span className="text-sm text-gray-500 capitalize">
+                        <span className="text-xs sm:text-sm text-gray-500 capitalize">
                           {product.category}
                         </span>
                       </div>
                       <div className="space-y-2">
                         <Link
                           href={`/product/${product.id}`}
-                          className="block w-full bg-gray-100 text-gray-800 text-center py-2 rounded-lg hover:bg-gray-200 transition duration-300 font-medium"
+                          className="block w-full bg-gray-100 text-gray-800 text-center py-2 rounded-lg hover:bg-gray-200 transition duration-300 font-medium text-sm sm:text-base"
                         >
                           View Details
                         </Link>
                         <button
                           onClick={() => addToCart(product)}
-                          className={`w-full px-4 py-2 rounded-lg transition duration-300 font-medium ${
+                          className={`w-full px-4 py-2 rounded-lg transition duration-300 font-medium text-sm sm:text-base ${
                             addedToCart === product.id
                               ? "bg-green-600 text-white"
                               : "bg-blue-600 text-white hover:bg-blue-700"

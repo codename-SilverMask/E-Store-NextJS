@@ -72,18 +72,26 @@ export default function ProductClient({ product }: ProductClientProps) {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-lg">
         <nav className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-blue-600">E-Store</h1>
-            <div className="flex items-center space-x-6">
-              <Link href="/" className="text-gray-700 hover:text-blue-600">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
+              E-Store
+            </h1>
+            <div className="flex items-center space-x-4 sm:space-x-6 text-sm sm:text-base">
+              <Link
+                href="/"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 Home
               </Link>
-              <Link href="/cart" className="text-gray-700 hover:text-blue-600">
+              <Link
+                href="/cart"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 Cart ({getTotalItems()})
               </Link>
               <Link
                 href="/orders"
-                className="text-gray-700 hover:text-blue-600"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
               >
                 Orders
               </Link>
@@ -92,19 +100,19 @@ export default function ProductClient({ product }: ProductClientProps) {
         </nav>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-6 sm:py-8">
         {/* Breadcrumb */}
-        <nav className="mb-8">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600">
+        <nav className="mb-6 sm:mb-8">
+          <ol className="flex items-center space-x-2 text-xs sm:text-sm text-gray-600 overflow-x-auto">
             <li>
-              <Link href="/" className="hover:text-blue-600">
+              <Link href="/" className="hover:text-blue-600 whitespace-nowrap">
                 Home
               </Link>
             </li>
             <li>/</li>
-            <li className="capitalize">{product.category}</li>
+            <li className="capitalize whitespace-nowrap">{product.category}</li>
             <li>/</li>
-            <li className="text-gray-800 font-medium truncate max-w-xs">
+            <li className="text-gray-800 font-medium truncate max-w-[120px] sm:max-w-xs">
               {product.title}
             </li>
           </ol>
@@ -112,10 +120,10 @@ export default function ProductClient({ product }: ProductClientProps) {
 
         {/* Product Details */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 p-4 sm:p-8">
             {/* Product Image */}
             <div className="relative">
-              <div className="aspect-square bg-gray-50 rounded-lg p-8">
+              <div className="aspect-square bg-gray-50 rounded-lg p-4 sm:p-8">
                 <Image
                   src={product.image}
                   alt={product.title}
@@ -127,12 +135,12 @@ export default function ProductClient({ product }: ProductClientProps) {
             </div>
 
             {/* Product Information */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div>
-                <span className="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mb-4 capitalize">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full mb-3 sm:mb-4 capitalize">
                   {product.category}
                 </span>
-                <h1 className="text-3xl font-bold text-black mb-2">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-2">
                   {product.title}
                 </h1>
               </div>
@@ -143,7 +151,7 @@ export default function ProductClient({ product }: ProductClientProps) {
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className={`w-5 h-5 ${
+                      className={`w-4 h-4 sm:w-5 sm:h-5 ${
                         i < Math.floor(product.rating.rate)
                           ? "text-yellow-400"
                           : "text-gray-300"

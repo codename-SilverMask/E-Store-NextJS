@@ -76,21 +76,26 @@ export default function CartPage() {
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-lg">
           <nav className="container mx-auto px-4 py-4">
-            <div className="flex justify-between items-center">
-              <h1 className="text-2xl font-bold text-blue-600">E-Store</h1>
-              <div className="flex items-center space-x-6">
-                <Link href="/" className="text-gray-700 hover:text-blue-600">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
+                E-Store
+              </h1>
+              <div className="flex items-center space-x-4 sm:space-x-6 text-sm sm:text-base">
+                <Link
+                  href="/"
+                  className="text-gray-700 hover:text-blue-600 transition-colors"
+                >
                   Home
                 </Link>
                 <Link
                   href="/cart"
-                  className="text-gray-700 hover:text-blue-600"
+                  className="text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   Cart (0)
                 </Link>
                 <Link
                   href="/orders"
-                  className="text-gray-700 hover:text-blue-600"
+                  className="text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   Orders
                 </Link>
@@ -99,8 +104,10 @@ export default function CartPage() {
           </nav>
         </header>
 
-        <main className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold mb-8 text-black">Your Cart</h1>
+        <main className="container mx-auto px-4 py-6 sm:py-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-black">
+            Your Cart
+          </h1>
           <div className="text-center py-16">
             <h2 className="text-2xl font-semibold mb-4">Your cart is empty</h2>
             <p className="text-gray-600 mb-8">
@@ -222,19 +229,21 @@ export default function CartPage() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-black">Your Cart</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-black">
+          Your Cart
+        </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2">
             <div className="space-y-4">
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-lg shadow-md p-6"
+                  className="bg-white rounded-lg shadow-md p-4 sm:p-6"
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className="relative w-20 h-20">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -242,43 +251,47 @@ export default function CartPage() {
                         className="object-cover rounded"
                       />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg text-black">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-base sm:text-lg text-black truncate">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600">${item.price}</p>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() =>
-                          updateQuantity(item.id, item.quantity - 1)
-                        }
-                        className="bg-gray-200 text-gray-700 w-8 h-8 rounded-full hover:bg-gray-300"
-                      >
-                        -
-                      </button>
-                      <span className="w-8 text-center text-black">
-                        {item.quantity}
-                      </span>
-                      <button
-                        onClick={() =>
-                          updateQuantity(item.id, item.quantity + 1)
-                        }
-                        className="bg-gray-200 text-gray-700 w-8 h-8 rounded-full hover:bg-gray-300"
-                      >
-                        +
-                      </button>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-black">
-                        ${(item.price * item.quantity).toFixed(2)}
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        ${item.price}
                       </p>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="text-red-600 hover:text-red-800 text-sm"
-                      >
-                        Remove
-                      </button>
+                    </div>
+                    <div className="flex items-center justify-between sm:justify-start space-x-2 w-full sm:w-auto">
+                      <div className="flex items-center space-x-2">
+                        <button
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity - 1)
+                          }
+                          className="bg-gray-200 text-gray-700 w-8 h-8 rounded-full hover:bg-gray-300 text-sm"
+                        >
+                          -
+                        </button>
+                        <span className="w-8 text-center text-black text-sm sm:text-base">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() =>
+                            updateQuantity(item.id, item.quantity + 1)
+                          }
+                          className="bg-gray-200 text-gray-700 w-8 h-8 rounded-full hover:bg-gray-300 text-sm"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-semibold text-black text-sm sm:text-base">
+                          ${(item.price * item.quantity).toFixed(2)}
+                        </p>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-red-600 hover:text-red-800 text-xs sm:text-sm"
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
