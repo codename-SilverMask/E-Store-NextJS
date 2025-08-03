@@ -4,7 +4,7 @@ A modern e-commerce web application built with Next.js, Redux Toolkit, Tailwind 
 
 ## 🚀 Live Demo
 
-Visit the live site at: [http://localhost:3000](http://localhost:3000)
+Visit the live site at: [http://localhost:3000](http://localhost:3000)](https://e-store-next-js-three.vercel.app/)
 
 ## ✨ Features
 
