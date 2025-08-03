@@ -1,6 +1,6 @@
 import { CartItem } from "../cart/types";
 
-export interface OrderItem extends CartItem {}
+export type OrderItem = CartItem;
 
 export interface CustomerInfo {
   fullName: string;

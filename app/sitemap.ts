@@ -17,7 +17,7 @@ async function getProducts(): Promise<Product[]> {
   try {
     const res = await fetch("https://fakestoreapi.com/products");
     return res.json();
-  } catch (error) {
+  } catch {
     return [];
   }
 }

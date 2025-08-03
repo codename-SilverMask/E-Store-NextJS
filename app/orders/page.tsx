@@ -74,7 +74,7 @@ export default function OrdersPage() {
             <div className="bg-white rounded-lg shadow-md p-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">No Orders Yet</h2>
               <p className="text-gray-600 mb-8">
-                You haven't placed any orders yet. Start shopping to see your orders here!
+                You haven&apos;t placed any orders yet. Start shopping to see your orders here!
               </p>
               <Link
                 href="/"

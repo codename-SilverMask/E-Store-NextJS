@@ -15,8 +15,8 @@ import Image from "next/image";
 
 export default function CheckoutPage() {
   const dispatch = useAppDispatch();
-  const cartItems = useAppSelector((state) => (state as any).cart.items || []);
-  const cartTotal = useAppSelector((state) => (state as any).cart.total || 0);
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const cartTotal = useAppSelector((state) => state.cart.total);
 
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
     fullName: "",
@@ -131,7 +131,7 @@ export default function CheckoutPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-6">Your Order</h2>
 
             <div className="space-y-4 mb-6">
-              {cartItems.map((item: any) => (
+              {cartItems.map((item) => (
                 <div
                   key={item.id}
                   className="flex items-center space-x-4 border-b pb-4"

@@ -266,12 +266,12 @@ export default function CartPage() {
                 Proceed to Checkout
               </button>
 
-              <a
+              <Link
                 href="/"
                 className="block text-center text-blue-600 hover:text-blue-700 mt-4"
               >
                 Continue Shopping
-              </a>
+              </Link>
             </div>
           </div>
         </div>

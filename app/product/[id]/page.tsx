@@ -26,7 +26,7 @@ async function getProduct(id: string): Promise<Product | null> {
     }
 
     return res.json();
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -40,7 +40,7 @@ export async function generateStaticParams() {
     return products.map((product) => ({
       id: product.id.toString(),
     }));
-  } catch (error) {
+  } catch {
     return [];
   }
 }
@@ -48,9 +48,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const product = await getProduct(params.id);
+  const resolvedParams = await params;
+  const product = await getProduct(resolvedParams.id);
 
   if (!product) {
     return {
@@ -75,9 +76,10 @@ export async function generateMetadata({
 export default async function ProductPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const product = await getProduct(params.id);
+  const resolvedParams = await params;
+  const product = await getProduct(resolvedParams.id);
 
   if (!product) {
     notFound();
