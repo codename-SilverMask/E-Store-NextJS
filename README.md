@@ -196,15 +196,7 @@ NEXT_PUBLIC_SITE_URL=https://yourstore.com
 
 ### Deployment
 
-The app is ready for deployment on Vercel, Netlify, or any platform supporting Next.js.
-
-## 📞 Contact
-
-For questions or support, please contact:
-
-- Email: info@estore.com
-- Phone: +1 (555) 123-4567
-
+The app is deployed on Vercel.
 ---
 
 Built with ❤️ using Next.js, Redux Toolkit, and Tailwind CSS.
